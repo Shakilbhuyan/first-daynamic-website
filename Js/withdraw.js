@@ -20,7 +20,7 @@ const previousBalanceString = balanceTotalelement.innerText;
 const previousBalancetal = parseFloat(previousBalanceString);
 
 // step 6: caculate the total balance
-const  currentTotalWithdrawBlance = previousBalancetal - currentWithdarwTotal;
+const  currentTotalWithdrawBlance = previousBalancetal - newWithdrawAmount ;
 if(currentTotalWithdrawBlance > 0 ){
     balanceTotalelement.innerText = currentTotalWithdrawBlance;
 }
