@@ -4,13 +4,17 @@ document.getElementById('btn-withdraw').addEventListener('click', function(){
     const withdrawField = document.getElementById('withdraw-field');
     const newWithdrawAmountString = withdrawField.value;
     const newWithdrawAmount = parseFloat(newWithdrawAmountString);
+    if(isNaN(newWithdrawAmount)){
+        alert('insert a valid number');
+        return;
+    }
 
 // step 3:get the current withdraw
 const withdrawTotalElement = document.getElementById('withdraw-total');
 const previousWithdrawString = withdrawTotalElement.innerText;
 const previousWithdrawTotal = parseFloat(previousWithdrawString);
-// step 4 : add amount of current withdraw
 
+// step 4 : add amount of current withdraw
 const currentWithdarwTotal = newWithdrawAmount + previousWithdrawTotal;
 withdrawTotalElement.innerText = currentWithdarwTotal;
 // step 5 ; Get balance current toal 
@@ -26,6 +30,7 @@ if(currentTotalWithdrawBlance > 0 ){
 }
 else{
     alert('Sorry Do not have enough Balance');
+    return;
 }
 // step 7 : clear withdraw field
 withdrawField.value = '';
